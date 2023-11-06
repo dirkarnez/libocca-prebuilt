@@ -111,6 +111,7 @@ jobs:
             cmake.exe -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
+            -DCMAKE_Fortran_COMPILER=gfortran ^
             -DENABLE_OPENMP=OFF ^
             -DENABLE_OPENCL=OFF ^
             -DENABLE_DPCPP=OFF ^
