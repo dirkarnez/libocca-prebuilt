@@ -107,9 +107,15 @@ jobs:
             cmake.exe -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
-            -DENABLE_TESTS=ON ^
-            -DENABLE_EXAMPLES=ON ^
-            -DENABLE_FORTRAN=ON ^
+            -DENABLE_OPENMP=OFF ^
+            -DENABLE_OPENCL=OFF ^
+            -DENABLE_DPCPP=OFF ^
+            -DENABLE_CUDA=OFF ^
+            -DENABLE_HIP=OFF ^
+            -DENABLE_METAL=OFF ^
+            -DENABLE_FORTRAN=OFF ^
+            -DENABLE_TESTS=OFF ^
+            -DENABLE_EXAMPLES=OFF ^
             -DCMAKE_INSTALL_PREFIX="cmake-build/${{ env.cmakeInstallationPath }}" -B./cmake-build &&^
             cd cmake-build && ( cmake --build . --config Release && cmake --install .  || type .\CMakeFiles\CMakeError.log )  
  
